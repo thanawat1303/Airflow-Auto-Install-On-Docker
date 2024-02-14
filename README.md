@@ -4,6 +4,7 @@
 - ติดตั้งด้วย docker-compose
 - โหลดไฟล์ compose จาก official airflow
 - ตั้งตั้ง
+
   python```
         docker compose up airflow-init # ตั้งตั้ง user pass admin
         docker compose up # ติดตั้ง airflow
