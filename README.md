@@ -42,7 +42,9 @@
     ```
 
 # ALPINE
+```sh
 docker run -it alpine /bin/sh
 apk add --update docker openrc
 rc-update add docker boot
 service docker start
+```
