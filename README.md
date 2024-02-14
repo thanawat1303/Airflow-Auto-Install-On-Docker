@@ -1,4 +1,11 @@
-# AIRFLOW
+# Airflow Auto Install
+- execute
+  ```
+  docker-compose up -d
+  ```
+- Open on Port 8080 http://localhost:8080
+
+# AIRFLOW Referrent
 
 ### ตั้งตั้ง airflow
 - ติดตั้งด้วย docker-compose
