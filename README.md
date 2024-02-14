@@ -4,17 +4,16 @@
 - ติดตั้งด้วย docker-compose
 - โหลดไฟล์ compose จาก official airflow
 - ตั้งตั้ง
+  ```sh
+    docker compose up airflow-init # ตั้งตั้ง user pass admin
+    docker compose up # ติดตั้ง airflow
 
-python```
-      docker compose up airflow-init # ตั้งตั้ง user pass admin
-      docker compose up # ติดตั้ง airflow
-
-      # docker-compose -f /airflow_base/compose.yml up airflow-init -d && docker-compose -f /airflow_base/compose.yml up -d
-```
+    # docker-compose -f /airflow_base/compose.yml up airflow-init -d && docker-compose -f /airflow_base/compose.yml up -d
+  ```
 
 ### การตั้ง scheduler
  1. กำหนดภายใน DAG ตามนี้
-    python```
+    ```python
       DAG(
           dag_id="id_dag",
           schedule="*/5 * * * *" || timedelta(seconds=10),
