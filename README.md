@@ -14,16 +14,16 @@
 
 ### การตั้ง scheduler
  1. กำหนดภายใน DAG ตามนี้
-  python```
-    DAG(
-        dag_id="id_dag",
-        schedule="*/5 * * * *" || timedelta(seconds=10),
-        catchup=False,
-        start_date=datetime(2024 , 2 , 1),
-        tags=["rtn-AI"],
-        default_args=default_args
-    )
-  ```
+    python```
+      DAG(
+          dag_id="id_dag",
+          schedule="*/5 * * * *" || timedelta(seconds=10),
+          catchup=False,
+          start_date=datetime(2024 , 2 , 1),
+          tags=["rtn-AI"],
+          default_args=default_args
+      )
+    ```
 
  - dag_id           = ไอดีของ dag
  - start_date       = ตั้งเวลาเริ่มต้นทำงาน
