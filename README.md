@@ -1,6 +1,6 @@
-# Airflow
+# AIRFLOW
 
-## ตั้งตั้ง airflow
+### ตั้งตั้ง airflow
 - ติดตั้งด้วย docker-compose
 - โหลดไฟล์ compose จาก official airflow
 - ตั้งตั้ง
@@ -11,7 +11,7 @@
         # docker-compose -f /airflow_base/compose.yml up airflow-init -d && docker-compose -f /airflow_base/compose.yml up -d
   ```
 
-## การตั้ง scheduler
+### การตั้ง scheduler
  1. กำหนดภายใน DAG ตามนี้
   python```
     DAG(
@@ -31,7 +31,7 @@
  - tags             = tags ของ dag
  - default_args     = ค่าที่ต้องการกำหนดให้ใช้งานทุก dag หมายเหตุ catchup ไม่สามารถใช้ได้
 
-## ใช้งานร่วมกับ docker
+### ใช้งานร่วมกับ docker
 - ประโยชน์
   - เหมาะกับงานที่มีการใช้ package ที่เยอะ เพราะถ้าตามคอนเซ็บของ docker แล้ว การใช้ micro service ในการเป็น base ของ jobs ก็จะช่วยให้ไม่กินทรัพยากรของเครื่องจนเกินไป ใช้เสร็จแล้วทิ้งได้เลย ไม่กินพื้นที่ของเครื่อง host งานที่มีกระบวนการทำงานหรือโค้ดเยอะๆ
 - การติดตั้ง
