@@ -1,0 +1,17 @@
+[2024-02-13T08:39:33.957+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.data_sets manual__2024-02-13T08:39:31.229121+00:00 [queued]>
+[2024-02-13T08:39:33.969+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.data_sets manual__2024-02-13T08:39:31.229121+00:00 [queued]>
+[2024-02-13T08:39:33.970+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-13T08:39:33.986+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): data_sets> on 2024-02-13 08:39:31.229121+00:00
+[2024-02-13T08:39:33.994+0000] {standard_task_runner.py:60} INFO - Started process 490 to run task
+[2024-02-13T08:39:33.998+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'data_sets', 'manual__2024-02-13T08:39:31.229121+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmpg6faub3v']
+[2024-02-13T08:39:34.001+0000] {standard_task_runner.py:88} INFO - Job 30: Subtask data_sets
+[2024-02-13T08:39:34.044+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.data_sets manual__2024-02-13T08:39:31.229121+00:00 [running]> on host cd7e09605de3
+[2024-02-13T08:39:34.115+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='data_sets' AIRFLOW_CTX_EXECUTION_DATE='2024-02-13T08:39:31.229121+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-13T08:39:31.229121+00:00'
+[2024-02-13T08:39:34.134+0000] {docker.py:359} INFO - Starting docker container from image python:3.8
+[2024-02-13T08:39:35.976+0000] {docker.py:429} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2024-02-13T08:39:36.160+0000] {docker.py:429} INFO - [notice] A new release of pip is available: 23.0.1 -> 24.0
+[notice] To update, run: pip install --upgrade pip
+[2024-02-13T08:39:41.279+0000] {docker.py:429} INFO - READ DATA :  HELLO WORLD  timestamp :  2024-02-13 08:39:41.275826
+[2024-02-13T08:39:41.608+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=deverlop_model, task_id=data_sets, execution_date=20240213T083931, start_date=20240213T083933, end_date=20240213T083941
+[2024-02-13T08:39:41.635+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-13T08:39:41.655+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

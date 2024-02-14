@@ -1,0 +1,17 @@
+[2024-02-13T16:48:15.494+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.Prepare1 scheduled__2022-01-01T02:35:00+00:00 [queued]>
+[2024-02-13T16:48:15.505+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.Prepare1 scheduled__2022-01-01T02:35:00+00:00 [queued]>
+[2024-02-13T16:48:15.506+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-13T16:48:15.528+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): Prepare1> on 2022-01-01 02:35:00+00:00
+[2024-02-13T16:48:15.537+0000] {standard_task_runner.py:60} INFO - Started process 1099 to run task
+[2024-02-13T16:48:15.541+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'Prepare1', 'scheduled__2022-01-01T02:35:00+00:00', '--job-id', '161', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmplqy9b2ju']
+[2024-02-13T16:48:15.555+0000] {standard_task_runner.py:88} INFO - Job 161: Subtask Prepare1
+[2024-02-13T16:48:15.614+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.Prepare1 scheduled__2022-01-01T02:35:00+00:00 [running]> on host a5e5e25b3882
+[2024-02-13T16:48:15.700+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='Prepare1' AIRFLOW_CTX_EXECUTION_DATE='2022-01-01T02:35:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2022-01-01T02:35:00+00:00'
+[2024-02-13T16:48:15.702+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-02-13T16:48:15.703+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo Prepare1']
+[2024-02-13T16:48:15.715+0000] {subprocess.py:86} INFO - Output:
+[2024-02-13T16:48:15.717+0000] {subprocess.py:93} INFO - Prepare1
+[2024-02-13T16:48:15.717+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-02-13T16:48:15.739+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=deverlop_model, task_id=Prepare1, execution_date=20220101T023500, start_date=20240213T164815, end_date=20240213T164815
+[2024-02-13T16:48:15.798+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-13T16:48:15.814+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

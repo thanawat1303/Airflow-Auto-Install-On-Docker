@@ -1,0 +1,17 @@
+[2024-02-13T10:06:06.189+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.Start_job scheduled__2024-02-11T10:23:00+00:00 [queued]>
+[2024-02-13T10:06:06.208+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.Start_job scheduled__2024-02-11T10:23:00+00:00 [queued]>
+[2024-02-13T10:06:06.209+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-13T10:06:06.244+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): Start_job> on 2024-02-11 10:23:00+00:00
+[2024-02-13T10:06:06.257+0000] {standard_task_runner.py:60} INFO - Started process 884 to run task
+[2024-02-13T10:06:06.263+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'Start_job', 'scheduled__2024-02-11T10:23:00+00:00', '--job-id', '61', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmpkmue1vl3']
+[2024-02-13T10:06:06.267+0000] {standard_task_runner.py:88} INFO - Job 61: Subtask Start_job
+[2024-02-13T10:06:06.362+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.Start_job scheduled__2024-02-11T10:23:00+00:00 [running]> on host 292a13d21cb7
+[2024-02-13T10:06:06.498+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='Start_job' AIRFLOW_CTX_EXECUTION_DATE='2024-02-11T10:23:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-11T10:23:00+00:00'
+[2024-02-13T10:06:06.501+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-02-13T10:06:06.503+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo START JOBS']
+[2024-02-13T10:06:06.525+0000] {subprocess.py:86} INFO - Output:
+[2024-02-13T10:06:06.527+0000] {subprocess.py:93} INFO - START JOBS
+[2024-02-13T10:06:06.528+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-02-13T10:06:06.580+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=deverlop_model, task_id=Start_job, execution_date=20240211T102300, start_date=20240213T100606, end_date=20240213T100606
+[2024-02-13T10:06:06.643+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-13T10:06:06.685+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

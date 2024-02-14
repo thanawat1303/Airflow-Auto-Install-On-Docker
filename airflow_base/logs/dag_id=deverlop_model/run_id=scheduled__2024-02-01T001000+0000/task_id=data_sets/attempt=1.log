@@ -1,0 +1,264 @@
+[2024-02-14T03:32:55.994+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [queued]>
+[2024-02-14T03:32:56.019+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [queued]>
+[2024-02-14T03:32:56.020+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-14T03:32:56.048+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): data_sets> on 2024-02-01 00:10:00+00:00
+[2024-02-14T03:32:56.060+0000] {standard_task_runner.py:60} INFO - Started process 2365 to run task
+[2024-02-14T03:32:56.064+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'data_sets', 'scheduled__2024-02-01T00:10:00+00:00', '--job-id', '218', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmpl7knexpq']
+[2024-02-14T03:32:56.069+0000] {standard_task_runner.py:88} INFO - Job 218: Subtask data_sets
+[2024-02-14T03:32:56.161+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [running]> on host 6e2ff7d2ffd0
+[2024-02-14T03:32:56.271+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='data_sets' AIRFLOW_CTX_EXECUTION_DATE='2024-02-01T00:10:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-01T00:10:00+00:00'
+[2024-02-14T03:32:56.318+0000] {docker.py:359} INFO - Starting docker container from image python:3.8
+[2024-02-14T03:32:56.325+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 265, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.43/containers/create?name=data_sets
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 502, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 376, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 391, in _run_image_with_mounts
+    self.container = self.cli.create_container(
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 439, in create_container
+    return self.create_container_from_config(config, name, platform)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 456, in create_container_from_config
+    return self._result(res, True)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 271, in _result
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 267, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.APIError: 409 Client Error for http+docker://localhost/v1.43/containers/create?name=data_sets: Conflict ("Conflict. The container name "/data_sets" is already in use by container "274f11c37459117ad8fefae2e68b45ab02cc21a5050ab64d14ec445044d357e3". You have to remove (or rename) that container to be able to reuse that name.")
+[2024-02-14T03:32:56.346+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=deverlop_model, task_id=data_sets, execution_date=20240201T001000, start_date=20240214T033255, end_date=20240214T033256
+[2024-02-14T03:32:56.371+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 218 for task data_sets (409 Client Error for http+docker://localhost/v1.43/containers/create?name=data_sets: Conflict ("Conflict. The container name "/data_sets" is already in use by container "274f11c37459117ad8fefae2e68b45ab02cc21a5050ab64d14ec445044d357e3". You have to remove (or rename) that container to be able to reuse that name."); 2365)
+[2024-02-14T03:32:56.419+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-14T03:32:56.473+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-02-14T03:34:23.714+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [queued]>
+[2024-02-14T03:34:23.736+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [queued]>
+[2024-02-14T03:34:23.739+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-14T03:34:23.837+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): data_sets> on 2024-02-01 00:10:00+00:00
+[2024-02-14T03:34:23.905+0000] {standard_task_runner.py:60} INFO - Started process 2472 to run task
+[2024-02-14T03:34:23.960+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'data_sets', 'scheduled__2024-02-01T00:10:00+00:00', '--job-id', '240', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmplw69rxpo']
+[2024-02-14T03:34:23.996+0000] {standard_task_runner.py:88} INFO - Job 240: Subtask data_sets
+[2024-02-14T03:34:24.111+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [running]> on host 6e2ff7d2ffd0
+[2024-02-14T03:34:24.392+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='data_sets' AIRFLOW_CTX_EXECUTION_DATE='2024-02-01T00:10:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-01T00:10:00+00:00'
+[2024-02-14T03:34:24.601+0000] {docker.py:359} INFO - Starting docker container from image python:3.8
+[2024-02-14T03:34:24.644+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 265, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.43/containers/create?name=data_sets
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 502, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 376, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 391, in _run_image_with_mounts
+    self.container = self.cli.create_container(
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 439, in create_container
+    return self.create_container_from_config(config, name, platform)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 456, in create_container_from_config
+    return self._result(res, True)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 271, in _result
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 267, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.APIError: 409 Client Error for http+docker://localhost/v1.43/containers/create?name=data_sets: Conflict ("Conflict. The container name "/data_sets" is already in use by container "ac3379fb148357dc9ddee1b0faa3062cdb812b9639673ca1db4737015ab26c83". You have to remove (or rename) that container to be able to reuse that name.")
+[2024-02-14T03:34:24.742+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=deverlop_model, task_id=data_sets, execution_date=20240201T001000, start_date=20240214T033423, end_date=20240214T033424
+[2024-02-14T03:34:24.785+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 240 for task data_sets (409 Client Error for http+docker://localhost/v1.43/containers/create?name=data_sets: Conflict ("Conflict. The container name "/data_sets" is already in use by container "ac3379fb148357dc9ddee1b0faa3062cdb812b9639673ca1db4737015ab26c83". You have to remove (or rename) that container to be able to reuse that name."); 2472)
+[2024-02-14T03:34:24.815+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-14T03:34:25.673+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-02-14T03:38:01.372+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [queued]>
+[2024-02-14T03:38:01.418+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [queued]>
+[2024-02-14T03:38:01.420+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-14T03:38:01.462+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): data_sets> on 2024-02-01 00:10:00+00:00
+[2024-02-14T03:38:01.475+0000] {standard_task_runner.py:60} INFO - Started process 2794 to run task
+[2024-02-14T03:38:01.484+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'data_sets', 'scheduled__2024-02-01T00:10:00+00:00', '--job-id', '316', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmpputimcyt']
+[2024-02-14T03:38:01.494+0000] {standard_task_runner.py:88} INFO - Job 316: Subtask data_sets
+[2024-02-14T03:38:01.609+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [running]> on host 6e2ff7d2ffd0
+[2024-02-14T03:38:01.830+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='data_sets' AIRFLOW_CTX_EXECUTION_DATE='2024-02-01T00:10:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-01T00:10:00+00:00'
+[2024-02-14T03:38:01.871+0000] {docker.py:359} INFO - Starting docker container from image python:3.8
+[2024-02-14T03:38:01.882+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 265, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.43/containers/create?name=data_sets
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 502, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 376, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 391, in _run_image_with_mounts
+    self.container = self.cli.create_container(
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 439, in create_container
+    return self.create_container_from_config(config, name, platform)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 456, in create_container_from_config
+    return self._result(res, True)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 271, in _result
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 267, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.APIError: 409 Client Error for http+docker://localhost/v1.43/containers/create?name=data_sets: Conflict ("Conflict. The container name "/data_sets" is already in use by container "7302939a532eeb4fbe33ede163277e207e5dec00731706b35a5fe6bffd47e265". You have to remove (or rename) that container to be able to reuse that name.")
+[2024-02-14T03:38:01.902+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=deverlop_model, task_id=data_sets, execution_date=20240201T001000, start_date=20240214T033801, end_date=20240214T033801
+[2024-02-14T03:38:01.938+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 316 for task data_sets (409 Client Error for http+docker://localhost/v1.43/containers/create?name=data_sets: Conflict ("Conflict. The container name "/data_sets" is already in use by container "7302939a532eeb4fbe33ede163277e207e5dec00731706b35a5fe6bffd47e265". You have to remove (or rename) that container to be able to reuse that name."); 2794)
+[2024-02-14T03:38:01.977+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-14T03:38:02.131+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-02-14T03:39:26.455+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [queued]>
+[2024-02-14T03:39:26.477+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [queued]>
+[2024-02-14T03:39:26.478+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-14T03:39:26.522+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): data_sets> on 2024-02-01 00:10:00+00:00
+[2024-02-14T03:39:26.550+0000] {standard_task_runner.py:60} INFO - Started process 2994 to run task
+[2024-02-14T03:39:26.557+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'data_sets', 'scheduled__2024-02-01T00:10:00+00:00', '--job-id', '369', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmp7x3t29kv']
+[2024-02-14T03:39:26.565+0000] {standard_task_runner.py:88} INFO - Job 369: Subtask data_sets
+[2024-02-14T03:39:26.742+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [running]> on host 6e2ff7d2ffd0
+[2024-02-14T03:39:26.977+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='data_sets' AIRFLOW_CTX_EXECUTION_DATE='2024-02-01T00:10:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-01T00:10:00+00:00'
+[2024-02-14T03:39:27.018+0000] {docker.py:359} INFO - Starting docker container from image python:3.8
+[2024-02-14T03:39:27.032+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 265, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.43/containers/create?name=data_sets
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 502, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 376, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 391, in _run_image_with_mounts
+    self.container = self.cli.create_container(
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 439, in create_container
+    return self.create_container_from_config(config, name, platform)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 456, in create_container_from_config
+    return self._result(res, True)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 271, in _result
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 267, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.APIError: 409 Client Error for http+docker://localhost/v1.43/containers/create?name=data_sets: Conflict ("Conflict. The container name "/data_sets" is already in use by container "33af6d28a2541e7971c878b23be5daa60420e9e541b4fa61cf521dbd9db46c50". You have to remove (or rename) that container to be able to reuse that name.")
+[2024-02-14T03:39:27.050+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=deverlop_model, task_id=data_sets, execution_date=20240201T001000, start_date=20240214T033926, end_date=20240214T033927
+[2024-02-14T03:39:27.081+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 369 for task data_sets (409 Client Error for http+docker://localhost/v1.43/containers/create?name=data_sets: Conflict ("Conflict. The container name "/data_sets" is already in use by container "33af6d28a2541e7971c878b23be5daa60420e9e541b4fa61cf521dbd9db46c50". You have to remove (or rename) that container to be able to reuse that name."); 2994)
+[2024-02-14T03:39:27.137+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-14T03:39:27.371+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-02-14T04:09:32.542+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [queued]>
+[2024-02-14T04:09:32.555+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [queued]>
+[2024-02-14T04:09:32.556+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-14T04:09:32.575+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): data_sets> on 2024-02-01 00:10:00+00:00
+[2024-02-14T04:09:32.592+0000] {standard_task_runner.py:60} INFO - Started process 4084 to run task
+[2024-02-14T04:09:32.596+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'data_sets', 'scheduled__2024-02-01T00:10:00+00:00', '--job-id', '547', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmpkr4n_50e']
+[2024-02-14T04:09:32.600+0000] {standard_task_runner.py:88} INFO - Job 547: Subtask data_sets
+[2024-02-14T04:09:32.718+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [running]> on host 6e2ff7d2ffd0
+[2024-02-14T04:09:32.835+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='data_sets' AIRFLOW_CTX_EXECUTION_DATE='2024-02-01T00:10:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-01T00:10:00+00:00'
+[2024-02-14T04:09:32.864+0000] {docker.py:359} INFO - Starting docker container from image python:3.8
+[2024-02-14T04:09:32.870+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 265, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.43/containers/create?name=data_sets
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 502, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 376, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 391, in _run_image_with_mounts
+    self.container = self.cli.create_container(
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 439, in create_container
+    return self.create_container_from_config(config, name, platform)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 456, in create_container_from_config
+    return self._result(res, True)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 271, in _result
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 267, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.APIError: 409 Client Error for http+docker://localhost/v1.43/containers/create?name=data_sets: Conflict ("Conflict. The container name "/data_sets" is already in use by container "a3d6ecd5a5acb2773118ac503c87775a322884b12aedb1149397e454815584f6". You have to remove (or rename) that container to be able to reuse that name.")
+[2024-02-14T04:09:32.882+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=deverlop_model, task_id=data_sets, execution_date=20240201T001000, start_date=20240214T040932, end_date=20240214T040932
+[2024-02-14T04:09:32.898+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 547 for task data_sets (409 Client Error for http+docker://localhost/v1.43/containers/create?name=data_sets: Conflict ("Conflict. The container name "/data_sets" is already in use by container "a3d6ecd5a5acb2773118ac503c87775a322884b12aedb1149397e454815584f6". You have to remove (or rename) that container to be able to reuse that name."); 4084)
+[2024-02-14T04:09:32.929+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-14T04:09:32.959+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-02-14T04:14:28.762+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [queued]>
+[2024-02-14T04:14:28.773+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [queued]>
+[2024-02-14T04:14:28.774+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-14T04:14:28.790+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): data_sets> on 2024-02-01 00:10:00+00:00
+[2024-02-14T04:14:28.799+0000] {standard_task_runner.py:60} INFO - Started process 4234 to run task
+[2024-02-14T04:14:28.803+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'data_sets', 'scheduled__2024-02-01T00:10:00+00:00', '--job-id', '569', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmp6j8q0j_f']
+[2024-02-14T04:14:28.806+0000] {standard_task_runner.py:88} INFO - Job 569: Subtask data_sets
+[2024-02-14T04:14:28.863+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.data_sets scheduled__2024-02-01T00:10:00+00:00 [running]> on host 6e2ff7d2ffd0
+[2024-02-14T04:14:28.946+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='data_sets' AIRFLOW_CTX_EXECUTION_DATE='2024-02-01T00:10:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-01T00:10:00+00:00'
+[2024-02-14T04:14:28.968+0000] {docker.py:359} INFO - Starting docker container from image python:3.8
+[2024-02-14T04:14:28.977+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 265, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.43/containers/create?name=data_sets
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 502, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 376, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 391, in _run_image_with_mounts
+    self.container = self.cli.create_container(
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 439, in create_container
+    return self.create_container_from_config(config, name, platform)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 456, in create_container_from_config
+    return self._result(res, True)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 271, in _result
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 267, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.APIError: 409 Client Error for http+docker://localhost/v1.43/containers/create?name=data_sets: Conflict ("Conflict. The container name "/data_sets" is already in use by container "ce0c4335bb30cba788ea15310467c80f0ebe8bb146141bbdcbd206303cff2014". You have to remove (or rename) that container to be able to reuse that name.")
+[2024-02-14T04:14:28.988+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=deverlop_model, task_id=data_sets, execution_date=20240201T001000, start_date=20240214T041428, end_date=20240214T041428
+[2024-02-14T04:14:29.003+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 569 for task data_sets (409 Client Error for http+docker://localhost/v1.43/containers/create?name=data_sets: Conflict ("Conflict. The container name "/data_sets" is already in use by container "ce0c4335bb30cba788ea15310467c80f0ebe8bb146141bbdcbd206303cff2014". You have to remove (or rename) that container to be able to reuse that name."); 4234)
+[2024-02-14T04:14:29.056+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-14T04:14:29.081+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

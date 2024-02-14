@@ -1,0 +1,26 @@
+[2024-02-14T02:52:46.770+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.StartJob manual__2024-02-14T02:52:44.894498+00:00 [queued]>
+[2024-02-14T02:52:46.776+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.StartJob manual__2024-02-14T02:52:44.894498+00:00 [queued]>
+[2024-02-14T02:52:46.777+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-14T02:52:46.789+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): StartJob> on 2024-02-14 02:52:44.894498+00:00
+[2024-02-14T02:52:46.803+0000] {standard_task_runner.py:60} INFO - Started process 1504 to run task
+[2024-02-14T02:52:46.804+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'StartJob', 'manual__2024-02-14T02:52:44.894498+00:00', '--job-id', '151', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmp94qjlnj8']
+[2024-02-14T02:52:46.809+0000] {standard_task_runner.py:88} INFO - Job 151: Subtask StartJob
+[2024-02-14T02:52:46.857+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.StartJob manual__2024-02-14T02:52:44.894498+00:00 [running]> on host 6e2ff7d2ffd0
+[2024-02-14T02:52:46.927+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='StartJob' AIRFLOW_CTX_EXECUTION_DATE='2024-02-14T02:52:44.894498+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-14T02:52:44.894498+00:00'
+[2024-02-14T02:52:46.929+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-02-14T02:52:46.931+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo StartJob && mkdir /***_base/dags/data/2024-02-14 02:52:45.955120']
+[2024-02-14T02:52:46.947+0000] {subprocess.py:86} INFO - Output:
+[2024-02-14T02:52:46.948+0000] {subprocess.py:93} INFO - StartJob
+[2024-02-14T02:52:46.964+0000] {subprocess.py:93} INFO - mkdir: cannot create directory ‘/***_base/dags/data/2024-02-14’: No such file or directory
+[2024-02-14T02:52:46.965+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-02-14T02:52:46.974+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-02-14T02:52:46.977+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=deverlop_model, task_id=StartJob, execution_date=20240214T025244, start_date=20240214T025246, end_date=20240214T025246
+[2024-02-14T02:52:46.987+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 151 for task StartJob (Bash command failed. The command returned a non-zero exit code 1.; 1504)
+[2024-02-14T02:52:47.020+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-14T02:52:47.052+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

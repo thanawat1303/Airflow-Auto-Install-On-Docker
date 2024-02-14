@@ -1,0 +1,102 @@
+[2024-02-14T03:32:50.979+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [queued]>
+[2024-02-14T03:32:51.037+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [queued]>
+[2024-02-14T03:32:51.042+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-14T03:32:51.097+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): StartJob> on 2024-02-01 00:25:00+00:00
+[2024-02-14T03:32:51.175+0000] {standard_task_runner.py:60} INFO - Started process 2333 to run task
+[2024-02-14T03:32:51.222+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'StartJob', 'scheduled__2024-02-01T00:25:00+00:00', '--job-id', '208', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmpr4n_24ow']
+[2024-02-14T03:32:51.271+0000] {standard_task_runner.py:88} INFO - Job 208: Subtask StartJob
+[2024-02-14T03:32:51.570+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [running]> on host 6e2ff7d2ffd0
+[2024-02-14T03:32:51.831+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='StartJob' AIRFLOW_CTX_EXECUTION_DATE='2024-02-01T00:25:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-01T00:25:00+00:00'
+[2024-02-14T03:32:51.841+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-02-14T03:32:51.857+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "\n            echo StartJob && \n            if [ ! -e '/opt/***/dags/data/2024-02-14' ]; then\n                mkdir /opt/***/dags/data/2024-02-14 \n            fi && \n            if [ ! -e '/opt/***/dags/data/2024-02-14/data' ]; then\n                mkdir /opt/***/dags/data/2024-02-14/data\n            fi && \n            if [ ! -e '/opt/***/dags/data/2024-02-14/model' ]; then\n                mkdir /opt/***/dags/data/2024-02-14/model\n            fi\n        "]
+[2024-02-14T03:32:51.994+0000] {subprocess.py:86} INFO - Output:
+[2024-02-14T03:32:52.008+0000] {subprocess.py:93} INFO - StartJob
+[2024-02-14T03:32:52.034+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-02-14T03:32:52.134+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=deverlop_model, task_id=StartJob, execution_date=20240201T002500, start_date=20240214T033250, end_date=20240214T033252
+[2024-02-14T03:32:52.233+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-14T03:32:52.605+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-02-14T03:34:20.419+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [queued]>
+[2024-02-14T03:34:20.431+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [queued]>
+[2024-02-14T03:34:20.432+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-14T03:34:20.456+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): StartJob> on 2024-02-01 00:25:00+00:00
+[2024-02-14T03:34:20.477+0000] {standard_task_runner.py:60} INFO - Started process 2433 to run task
+[2024-02-14T03:34:20.492+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'StartJob', 'scheduled__2024-02-01T00:25:00+00:00', '--job-id', '229', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmpte0rjln_']
+[2024-02-14T03:34:20.497+0000] {standard_task_runner.py:88} INFO - Job 229: Subtask StartJob
+[2024-02-14T03:34:20.587+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [running]> on host 6e2ff7d2ffd0
+[2024-02-14T03:34:20.706+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='StartJob' AIRFLOW_CTX_EXECUTION_DATE='2024-02-01T00:25:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-01T00:25:00+00:00'
+[2024-02-14T03:34:20.714+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-02-14T03:34:20.718+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "\n            echo StartJob && \n            if [ ! -e '/opt/***/dags/data/2024-02-14' ]; then\n                mkdir /opt/***/dags/data/2024-02-14 \n            fi && \n            if [ ! -e '/opt/***/dags/data/2024-02-14/data' ]; then\n                mkdir /opt/***/dags/data/2024-02-14/data\n            fi && \n            if [ ! -e '/opt/***/dags/data/2024-02-14/model' ]; then\n                mkdir /opt/***/dags/data/2024-02-14/model\n            fi\n        "]
+[2024-02-14T03:34:20.748+0000] {subprocess.py:86} INFO - Output:
+[2024-02-14T03:34:20.755+0000] {subprocess.py:93} INFO - StartJob
+[2024-02-14T03:34:20.764+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-02-14T03:34:20.820+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=deverlop_model, task_id=StartJob, execution_date=20240201T002500, start_date=20240214T033420, end_date=20240214T033420
+[2024-02-14T03:34:20.907+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-14T03:34:20.963+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-02-14T03:37:58.680+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [queued]>
+[2024-02-14T03:37:58.695+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [queued]>
+[2024-02-14T03:37:58.696+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-14T03:37:58.715+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): StartJob> on 2024-02-01 00:25:00+00:00
+[2024-02-14T03:37:58.733+0000] {standard_task_runner.py:60} INFO - Started process 2753 to run task
+[2024-02-14T03:37:58.738+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'StartJob', 'scheduled__2024-02-01T00:25:00+00:00', '--job-id', '306', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmp5w0mw_v9']
+[2024-02-14T03:37:58.741+0000] {standard_task_runner.py:88} INFO - Job 306: Subtask StartJob
+[2024-02-14T03:37:58.851+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [running]> on host 6e2ff7d2ffd0
+[2024-02-14T03:37:59.009+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='StartJob' AIRFLOW_CTX_EXECUTION_DATE='2024-02-01T00:25:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-01T00:25:00+00:00'
+[2024-02-14T03:37:59.017+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-02-14T03:37:59.019+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "\n            echo StartJob && \n            if [ ! -e '/opt/***/dags/data/2024-02-14' ]; then\n                mkdir /opt/***/dags/data/2024-02-14 \n            fi && \n            if [ ! -e '/opt/***/dags/data/2024-02-14/data' ]; then\n                mkdir /opt/***/dags/data/2024-02-14/data\n            fi && \n            if [ ! -e '/opt/***/dags/data/2024-02-14/model' ]; then\n                mkdir /opt/***/dags/data/2024-02-14/model\n            fi\n        "]
+[2024-02-14T03:37:59.057+0000] {subprocess.py:86} INFO - Output:
+[2024-02-14T03:37:59.060+0000] {subprocess.py:93} INFO - StartJob
+[2024-02-14T03:37:59.082+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-02-14T03:37:59.133+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=deverlop_model, task_id=StartJob, execution_date=20240201T002500, start_date=20240214T033758, end_date=20240214T033759
+[2024-02-14T03:37:59.216+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-14T03:37:59.392+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-02-14T03:39:23.807+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [queued]>
+[2024-02-14T03:39:23.819+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [queued]>
+[2024-02-14T03:39:23.820+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-14T03:39:23.843+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): StartJob> on 2024-02-01 00:25:00+00:00
+[2024-02-14T03:39:23.852+0000] {standard_task_runner.py:60} INFO - Started process 2957 to run task
+[2024-02-14T03:39:23.856+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'StartJob', 'scheduled__2024-02-01T00:25:00+00:00', '--job-id', '359', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmpxv5_ij6r']
+[2024-02-14T03:39:23.860+0000] {standard_task_runner.py:88} INFO - Job 359: Subtask StartJob
+[2024-02-14T03:39:23.937+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [running]> on host 6e2ff7d2ffd0
+[2024-02-14T03:39:24.108+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='StartJob' AIRFLOW_CTX_EXECUTION_DATE='2024-02-01T00:25:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-01T00:25:00+00:00'
+[2024-02-14T03:39:24.125+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-02-14T03:39:24.130+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "\n            echo StartJob && \n            if [ ! -e '/opt/***/dags/data/2024-02-14' ]; then\n                mkdir /opt/***/dags/data/2024-02-14 \n            fi && \n            if [ ! -e '/opt/***/dags/data/2024-02-14/data' ]; then\n                mkdir /opt/***/dags/data/2024-02-14/data\n            fi && \n            if [ ! -e '/opt/***/dags/data/2024-02-14/model' ]; then\n                mkdir /opt/***/dags/data/2024-02-14/model\n            fi\n        "]
+[2024-02-14T03:39:24.168+0000] {subprocess.py:86} INFO - Output:
+[2024-02-14T03:39:24.181+0000] {subprocess.py:93} INFO - StartJob
+[2024-02-14T03:39:24.196+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-02-14T03:39:24.351+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=deverlop_model, task_id=StartJob, execution_date=20240201T002500, start_date=20240214T033923, end_date=20240214T033924
+[2024-02-14T03:39:24.490+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-14T03:39:24.574+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-02-14T04:09:30.521+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [queued]>
+[2024-02-14T04:09:30.534+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [queued]>
+[2024-02-14T04:09:30.535+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-14T04:09:30.559+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): StartJob> on 2024-02-01 00:25:00+00:00
+[2024-02-14T04:09:30.573+0000] {standard_task_runner.py:60} INFO - Started process 4055 to run task
+[2024-02-14T04:09:30.577+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'StartJob', 'scheduled__2024-02-01T00:25:00+00:00', '--job-id', '539', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmp5h_di1jn']
+[2024-02-14T04:09:30.580+0000] {standard_task_runner.py:88} INFO - Job 539: Subtask StartJob
+[2024-02-14T04:09:30.664+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [running]> on host 6e2ff7d2ffd0
+[2024-02-14T04:09:30.792+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='StartJob' AIRFLOW_CTX_EXECUTION_DATE='2024-02-01T00:25:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-01T00:25:00+00:00'
+[2024-02-14T04:09:30.796+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-02-14T04:09:30.799+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "\n            echo StartJob && \n            if [ ! -e '/opt/***/dags/data/2024-02-14' ]; then\n                mkdir /opt/***/dags/data/2024-02-14 \n            fi && \n            if [ ! -e '/opt/***/dags/data/2024-02-14/data' ]; then\n                mkdir /opt/***/dags/data/2024-02-14/data\n            fi && \n            if [ ! -e '/opt/***/dags/data/2024-02-14/model' ]; then\n                mkdir /opt/***/dags/data/2024-02-14/model\n            fi\n        "]
+[2024-02-14T04:09:30.842+0000] {subprocess.py:86} INFO - Output:
+[2024-02-14T04:09:30.844+0000] {subprocess.py:93} INFO - StartJob
+[2024-02-14T04:09:30.872+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-02-14T04:09:30.922+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=deverlop_model, task_id=StartJob, execution_date=20240201T002500, start_date=20240214T040930, end_date=20240214T040930
+[2024-02-14T04:09:30.998+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-14T04:09:31.195+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-02-14T04:14:27.262+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [queued]>
+[2024-02-14T04:14:27.272+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [queued]>
+[2024-02-14T04:14:27.272+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-14T04:14:27.285+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): StartJob> on 2024-02-01 00:25:00+00:00
+[2024-02-14T04:14:27.294+0000] {standard_task_runner.py:60} INFO - Started process 4217 to run task
+[2024-02-14T04:14:27.297+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'StartJob', 'scheduled__2024-02-01T00:25:00+00:00', '--job-id', '565', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmpy9_juj6e']
+[2024-02-14T04:14:27.300+0000] {standard_task_runner.py:88} INFO - Job 565: Subtask StartJob
+[2024-02-14T04:14:27.400+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.StartJob scheduled__2024-02-01T00:25:00+00:00 [running]> on host 6e2ff7d2ffd0
+[2024-02-14T04:14:27.528+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='StartJob' AIRFLOW_CTX_EXECUTION_DATE='2024-02-01T00:25:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-01T00:25:00+00:00'
+[2024-02-14T04:14:27.533+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-02-14T04:14:27.536+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "\n            echo StartJob && \n            if [ ! -e '/opt/***/dags/data/2024-02-14' ]; then\n                mkdir /opt/***/dags/data/2024-02-14 \n            fi && \n            if [ ! -e '/opt/***/dags/data/2024-02-14/data' ]; then\n                mkdir /opt/***/dags/data/2024-02-14/data\n            fi && \n            if [ ! -e '/opt/***/dags/data/2024-02-14/model' ]; then\n                mkdir /opt/***/dags/data/2024-02-14/model\n            fi\n        "]
+[2024-02-14T04:14:27.559+0000] {subprocess.py:86} INFO - Output:
+[2024-02-14T04:14:27.561+0000] {subprocess.py:93} INFO - StartJob
+[2024-02-14T04:14:27.568+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-02-14T04:14:27.605+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=deverlop_model, task_id=StartJob, execution_date=20240201T002500, start_date=20240214T041427, end_date=20240214T041427
+[2024-02-14T04:14:27.673+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-14T04:14:27.715+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

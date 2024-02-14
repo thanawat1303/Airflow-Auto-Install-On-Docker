@@ -1,0 +1,74 @@
+[2024-02-13T16:20:29.072+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deverlop_model.data_sets manual__2024-02-13T16:20:24.426381+00:00 [queued]>
+[2024-02-13T16:20:29.079+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deverlop_model.data_sets manual__2024-02-13T16:20:24.426381+00:00 [queued]>
+[2024-02-13T16:20:29.080+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-13T16:20:29.090+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): data_sets> on 2024-02-13 16:20:24.426381+00:00
+[2024-02-13T16:20:29.095+0000] {standard_task_runner.py:60} INFO - Started process 134 to run task
+[2024-02-13T16:20:29.098+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'deverlop_model', 'data_sets', 'manual__2024-02-13T16:20:24.426381+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/task.py', '--cfg-path', '/tmp/tmp3x_g24on']
+[2024-02-13T16:20:29.100+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask data_sets
+[2024-02-13T16:20:29.139+0000] {task_command.py:423} INFO - Running <TaskInstance: deverlop_model.data_sets manual__2024-02-13T16:20:24.426381+00:00 [running]> on host a5e5e25b3882
+[2024-02-13T16:20:29.201+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rtn' AIRFLOW_CTX_DAG_ID='deverlop_model' AIRFLOW_CTX_TASK_ID='data_sets' AIRFLOW_CTX_EXECUTION_DATE='2024-02-13T16:20:24.426381+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-13T16:20:24.426381+00:00'
+[2024-02-13T16:20:29.217+0000] {docker.py:486} INFO - Pulling docker image python:3.8
+[2024-02-13T16:20:34.491+0000] {docker.py:500} INFO - 3.8: Pulling from library/python
+[2024-02-13T16:20:36.058+0000] {docker.py:500} INFO - 7bb465c29149: Pulling fs layer
+[2024-02-13T16:20:36.059+0000] {docker.py:500} INFO - 2b9b41aaa3c5: Pulling fs layer
+[2024-02-13T16:20:36.060+0000] {docker.py:500} INFO - 49b40be4436e: Pulling fs layer
+[2024-02-13T16:20:36.060+0000] {docker.py:500} INFO - c558fac597f8: Pulling fs layer
+[2024-02-13T16:20:36.062+0000] {docker.py:500} INFO - 11402150a57e: Pulling fs layer
+[2024-02-13T16:20:36.064+0000] {docker.py:500} INFO - 4532b04ec8f7: Pulling fs layer
+[2024-02-13T16:20:36.065+0000] {docker.py:500} INFO - 4df0efb76c10: Pulling fs layer
+[2024-02-13T16:20:36.065+0000] {docker.py:500} INFO - 951fd003e72c: Pulling fs layer
+[2024-02-13T16:20:36.066+0000] {docker.py:500} INFO - 11402150a57e: Waiting
+[2024-02-13T16:20:36.066+0000] {docker.py:500} INFO - 951fd003e72c: Waiting
+[2024-02-13T16:20:36.067+0000] {docker.py:500} INFO - 4532b04ec8f7: Waiting
+[2024-02-13T16:20:36.067+0000] {docker.py:500} INFO - 4df0efb76c10: Waiting
+[2024-02-13T16:20:36.068+0000] {docker.py:500} INFO - c558fac597f8: Waiting
+[2024-02-13T16:20:39.017+0000] {docker.py:500} INFO - 2b9b41aaa3c5: Downloading
+[2024-02-13T16:20:39.669+0000] {docker.py:500} INFO - 7bb465c29149: Downloading
+[2024-02-13T16:20:40.341+0000] {docker.py:500} INFO - 49b40be4436e: Downloading
+[2024-02-13T16:23:00.128+0000] {docker.py:500} INFO - 2b9b41aaa3c5: Verifying Checksum
+[2024-02-13T16:23:00.130+0000] {docker.py:500} INFO - 2b9b41aaa3c5: Download complete
+[2024-02-13T16:23:20.359+0000] {docker.py:500} INFO - 7bb465c29149: Verifying Checksum
+[2024-02-13T16:23:20.360+0000] {docker.py:500} INFO - 7bb465c29149: Download complete
+[2024-02-13T16:23:20.637+0000] {docker.py:500} INFO - 7bb465c29149: Extracting
+[2024-02-13T16:23:21.633+0000] {docker.py:500} INFO - c558fac597f8: Downloading
+[2024-02-13T16:23:22.430+0000] {docker.py:500} INFO - 11402150a57e: Downloading
+[2024-02-13T16:23:43.194+0000] {docker.py:500} INFO - 7bb465c29149: Pull complete
+[2024-02-13T16:23:44.232+0000] {docker.py:500} INFO - 2b9b41aaa3c5: Extracting
+[2024-02-13T16:23:45.728+0000] {docker.py:500} INFO - 2b9b41aaa3c5: Pull complete
+[2024-02-13T16:23:56.660+0000] {docker.py:500} INFO - 11402150a57e: Verifying Checksum
+[2024-02-13T16:23:56.661+0000] {docker.py:500} INFO - 11402150a57e: Download complete
+[2024-02-13T16:24:08.154+0000] {docker.py:500} INFO - 4532b04ec8f7: Downloading
+[2024-02-13T16:24:46.475+0000] {docker.py:500} INFO - 4532b04ec8f7: Verifying Checksum
+[2024-02-13T16:24:46.476+0000] {docker.py:500} INFO - 4532b04ec8f7: Download complete
+[2024-02-13T16:24:57.708+0000] {docker.py:500} INFO - 4df0efb76c10: Downloading
+[2024-02-13T16:24:57.709+0000] {docker.py:500} INFO - 4df0efb76c10: Verifying Checksum
+[2024-02-13T16:24:57.710+0000] {docker.py:500} INFO - 4df0efb76c10: Download complete
+[2024-02-13T16:25:00.459+0000] {docker.py:500} INFO - 951fd003e72c: Downloading
+[2024-02-13T16:25:12.360+0000] {docker.py:500} INFO - 951fd003e72c: Verifying Checksum
+[2024-02-13T16:25:12.360+0000] {docker.py:500} INFO - 951fd003e72c: Download complete
+[2024-02-13T16:25:17.104+0000] {docker.py:500} INFO - 49b40be4436e: Verifying Checksum
+[2024-02-13T16:25:17.105+0000] {docker.py:500} INFO - 49b40be4436e: Download complete
+[2024-02-13T16:25:17.142+0000] {docker.py:500} INFO - 49b40be4436e: Extracting
+[2024-02-13T16:25:20.943+0000] {docker.py:500} INFO - 49b40be4436e: Pull complete
+[2024-02-13T16:27:30.960+0000] {docker.py:500} INFO - c558fac597f8: Verifying Checksum
+[2024-02-13T16:27:30.961+0000] {docker.py:500} INFO - c558fac597f8: Download complete
+[2024-02-13T16:27:31.032+0000] {docker.py:500} INFO - c558fac597f8: Extracting
+[2024-02-13T16:27:38.061+0000] {docker.py:500} INFO - c558fac597f8: Pull complete
+[2024-02-13T16:27:38.083+0000] {docker.py:500} INFO - 11402150a57e: Extracting
+[2024-02-13T16:27:38.409+0000] {docker.py:500} INFO - 11402150a57e: Pull complete
+[2024-02-13T16:27:38.425+0000] {docker.py:500} INFO - 4532b04ec8f7: Extracting
+[2024-02-13T16:27:38.916+0000] {docker.py:500} INFO - 4532b04ec8f7: Pull complete
+[2024-02-13T16:27:38.920+0000] {docker.py:500} INFO - 4df0efb76c10: Extracting
+[2024-02-13T16:27:38.939+0000] {docker.py:500} INFO - 4df0efb76c10: Pull complete
+[2024-02-13T16:27:38.942+0000] {docker.py:500} INFO - 951fd003e72c: Extracting
+[2024-02-13T16:27:39.190+0000] {docker.py:500} INFO - 951fd003e72c: Pull complete
+[2024-02-13T16:27:39.206+0000] {docker.py:495} INFO - Digest: sha256:6150a41f1a0913ccbd5eb52fa12b90228e36286ef3255e6f5c5496d114ab955d
+[2024-02-13T16:27:39.210+0000] {docker.py:495} INFO - Status: Downloaded newer image for python:3.8
+[2024-02-13T16:27:39.214+0000] {docker.py:359} INFO - Starting docker container from image python:3.8
+[2024-02-13T16:27:41.140+0000] {docker.py:429} INFO - WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[2024-02-13T16:27:41.470+0000] {docker.py:429} INFO - [notice] A new release of pip is available: 23.0.1 -> 24.0
+[notice] To update, run: pip install --upgrade pip
+[2024-02-13T16:27:46.554+0000] {docker.py:429} INFO - READ DATA :  HELLO WORLD  timestamp :  2024-02-13 16:27:46.550845
+[2024-02-13T16:27:46.939+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=deverlop_model, task_id=data_sets, execution_date=20240213T162024, start_date=20240213T162029, end_date=20240213T162746
+[2024-02-13T16:27:46.966+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-13T16:27:46.989+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

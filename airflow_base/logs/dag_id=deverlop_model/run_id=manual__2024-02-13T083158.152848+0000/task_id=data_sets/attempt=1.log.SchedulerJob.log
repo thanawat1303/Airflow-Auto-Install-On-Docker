@@ -1,0 +1,1 @@
+[2024-02-13T08:32:01.475+0000] {scheduler_job_runner.py:781} ERROR - Executor reports task instance <TaskInstance: deverlop_model.data_sets manual__2024-02-13T08:31:58.152848+00:00 [queued]> finished (success) although the task says it's queued. (Info: None) Was the task killed externally?

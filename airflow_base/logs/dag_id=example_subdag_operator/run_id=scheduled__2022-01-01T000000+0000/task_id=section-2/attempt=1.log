@@ -1,0 +1,13 @@
+[2024-02-13T16:23:56.673+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: example_subdag_operator.section-2 scheduled__2022-01-01T00:00:00+00:00 [queued]>
+[2024-02-13T16:23:56.680+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: example_subdag_operator.section-2 scheduled__2022-01-01T00:00:00+00:00 [queued]>
+[2024-02-13T16:23:56.681+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2024-02-13T16:23:57.604+0000] {taskinstance.py:2191} INFO - Executing <Task(SubDagOperator): section-2> on 2022-01-01 00:00:00+00:00
+[2024-02-13T16:23:57.614+0000] {standard_task_runner.py:60} INFO - Started process 188 to run task
+[2024-02-13T16:23:57.616+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'example_subdag_operator', 'section-2', 'scheduled__2022-01-01T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', '/home/***/.local/lib/python3.8/site-packages/***/example_dags/example_subdag_operator.py', '--cfg-path', '/tmp/tmp1m71ahuc']
+[2024-02-13T16:23:57.619+0000] {standard_task_runner.py:88} INFO - Job 6: Subtask section-2
+[2024-02-13T16:23:59.488+0000] {task_command.py:423} INFO - Running <TaskInstance: example_subdag_operator.section-2 scheduled__2022-01-01T00:00:00+00:00 [running]> on host a5e5e25b3882
+[2024-02-13T16:24:01.500+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='example_subdag_operator' AIRFLOW_CTX_TASK_ID='section-2' AIRFLOW_CTX_EXECUTION_DATE='2022-01-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2022-01-01T00:00:00+00:00'
+[2024-02-13T16:24:01.519+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:207: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2024-02-13T16:24:01.559+0000] {subdag.py:179} INFO - Created DagRun: scheduled__2022-01-01T00:00:00+00:00

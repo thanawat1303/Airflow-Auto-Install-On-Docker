@@ -1,0 +1,10 @@
+services:
+  airflow:
+    build:
+      context: .
+    ports:
+      - 8080:8080
+    volumes:
+      - ./airflow_base:/airflow_base
+      - ./data-docker/dockerd-entrypoint.sh:/usr/local/bin/dockerd-entrypoint.sh
+    privileged : true
