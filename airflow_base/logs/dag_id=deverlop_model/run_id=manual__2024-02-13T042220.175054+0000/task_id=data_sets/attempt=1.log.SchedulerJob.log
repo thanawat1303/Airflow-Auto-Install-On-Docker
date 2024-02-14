@@ -1,2 +1,0 @@
-[2024-02-13T04:36:07.185+0000] {scheduler_job_runner.py:1586} WARNING - Marking task instance <TaskInstance: deverlop_model.data_sets manual__2024-02-13T04:22:20.175054+00:00 [queued]> stuck in queued as failed. If the task instance has available retries, it will be retried.
-[2024-02-13T04:36:07.306+0000] {scheduler_job_runner.py:781} ERROR - Executor reports task instance <TaskInstance: deverlop_model.data_sets manual__2024-02-13T04:22:20.175054+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?
