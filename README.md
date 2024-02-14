@@ -41,6 +41,12 @@
     ```
     ```
 
+### Werning
+- หากระบบแจ้งเตือนเกี่ยวกับไฟล์ dockerd-entrypoint.sh ให้ทำการเข้าไปเปลี่ยน permission
+  ```
+  chmod 777 ./data-docker/dockerd-entrypoint.sh
+  ```
+
 # ALPINE
 ```sh
 docker run -it alpine /bin/sh
