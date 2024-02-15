@@ -195,16 +195,21 @@ else
 	set -- docker-entrypoint.sh "$@"
 fi
 
-exec "$@" &> /is_install.bin &
+exec "$@" &> /is_install.txt &
 
-file="/is_install.bin"
-until [ -e "$file" ]; do
-    sleep 1
+file="/is_install.txt"
+until [ $(grep -c "Daemon has completed initialization" /is_install.txt) -eq 1 ]; do
+	cat /is_install.txt
 done
 
-if [ -e "$file" ]; then
-	rm /is_install.bin &&
-	docker-compose -f /airflow_base/compose.yml up airflow-init -d && 
-	sleep 20 &&
-	docker-compose -f /airflow_base/compose.yml up
+file_af_is="/is_airflow.txt"
+if [ ! -e "$file_af_is" ]; then
+	rm /is_install.txt &&
+	docker-compose -f /airflow_base/docker-compose-server.yaml up -d &&
+	docker-compose -f /airflow_base/compose.yml up airflow-init -d &&
+	sleep 5 &&
+	docker-compose -f /airflow_base/compose.yml up &&
+	echo 'install airflow' &> /is_airflow.txt
+else 
+	docker-compose logs --follow
 fi

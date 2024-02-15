@@ -8,3 +8,9 @@ services:
       - ./airflow_base:/airflow_base
       - ./data-docker/dockerd-entrypoint.sh:/usr/local/bin/dockerd-entrypoint.sh
     privileged : true
+    restart: always
+
+  # container_server :
+  #   image: docker:dind
+  #   privileged : true
+  #   restart: always

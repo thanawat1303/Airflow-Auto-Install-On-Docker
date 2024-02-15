@@ -1,0 +1,13 @@
+services:
+  container-server :
+    build : ./docker-server/.
+    volumes :
+      - ./dags/data:/pipeline/data
+      - ./dags/task:/pipeline/task
+    privileged : true
+    restart : always
+    networks:
+      - airflow-rtn-network
+
+networks:
+  airflow-rtn-network:

@@ -1,0 +1,4 @@
+/airflow_base/logs
+/airflow_base/plugins
+/airflow_base/config
+/airflow_standalon
