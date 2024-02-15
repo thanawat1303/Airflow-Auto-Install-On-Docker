@@ -1,5 +1,7 @@
 FROM docker:dind
 
-RUN apk add socat && socat TCP4-LISTEN:2375,fork,reuseaddr UNIX-CONNECT:/var/run/docker.sock &
+RUN apk add socat
 
-VOLUME [ "/pipeline/data" , "/pipeline/task" ]
+VOLUME [ "/pipeline" ]
+
+COPY ./dockerd-entrypoint.sh /usr/local/bin/dockerd-entrypoint.sh

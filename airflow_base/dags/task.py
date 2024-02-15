@@ -25,14 +25,14 @@ with DAG(
         task_id='StartJob',
         bash_command=f"""
             echo StartJob && 
-            if [ ! -e '/opt/airflow/dags/data/{date}' ]; then
-                mkdir /opt/airflow/dags/data/{date} 
+            if [ ! -e '/opt/airflow/dags/pipeline/data/{date}' ]; then
+                mkdir /opt/airflow/dags/pipeline/data/{date} 
             fi && 
-            if [ ! -e '/opt/airflow/dags/data/{date}/data' ]; then
-                mkdir /opt/airflow/dags/data/{date}/data
+            if [ ! -e '/opt/airflow/dags/pipeline/data/{date}/data' ]; then
+                mkdir /opt/airflow/dags/pipeline/data/{date}/data
             fi && 
-            if [ ! -e '/opt/airflow/dags/data/{date}/model' ]; then
-                mkdir /opt/airflow/dags/data/{date}/model
+            if [ ! -e '/opt/airflow/dags/pipeline/data/{date}/model' ]; then
+                mkdir /opt/airflow/dags/pipeline/data/{date}/model
             fi
         """
     )
@@ -46,14 +46,13 @@ with DAG(
         # docker_url="unix:///var/run/docker.sock",
         docker_url="tcp://container-server:2375",
         xcom_all=False,
-        network_mode="container:spark-master",
-        tty=True,
+        network_mode="bridge",
         auto_remove=True,
         mount_tmp_dir=False,
         mounts=[
             Mount(source=f"/pipeline/data/input_data_sets/" , target="/input_service/" , type="bind"),
             Mount(source=f"/pipeline/data/{date}/data" , target="/output_service/" , type="bind"),
-            Mount(source=f"/pipeline/task/1-DataSets/" , target="/task/" , type="bind"),
+            Mount(source=f"/pipeline/tasks/1-DataSets/" , target="/task/" , type="bind"),
         ], 
     )
 
@@ -72,7 +71,7 @@ with DAG(
         mounts=[
             Mount(source=f"/pipeline/data/{date}/data" , target="/input_service/" , type="bind"),
             Mount(source=f"/pipeline/data/{date}/data" , target="/output_service/" , type="bind"),
-            Mount(source=f"/pipeline/task/2-PrepareDataSet/" , target="/task/" , type="bind"),
+            Mount(source=f"/pipeline/tasks/2-PrepareDataSet/" , target="/task/" , type="bind"),
         ], 
     )
 

@@ -198,19 +198,10 @@ fi
 exec "$@" &> /is_install.txt &
 
 file="/is_install.txt"
-until [ $(grep -c "API listen on /var/run/docker.sock" /is_install.txt) -eq 1 ]; do
+until [ $(grep -c "Daemon has completed initialization" /is_install.txt) -eq 1 ]; do
 	cat /is_install.txt
 done
 
-file_af_is="/is_airflow.txt"
-if [ ! -e "$file_af_is" ]; then
-	rm /is_install.txt &&
-	docker-compose -f /airflow_base/docker-compose-server.yaml up -d &&
-	sleep 20 &&
-	docker-compose -f /airflow_base/compose.yaml up airflow-init -d &&
-	sleep 10 &&
-	docker-compose -f /airflow_base/compose.yaml up &&
-	echo 'install airflow' &> /is_airflow.txt
-else 
-	docker-compose logs --follow
-fi
+echo 'TCP START' &&
+rm /is_install.txt &&
+socat TCP4-LISTEN:2375,fork,reuseaddr UNIX-CONNECT:/var/run/docker.sock

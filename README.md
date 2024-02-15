@@ -5,7 +5,15 @@
   ```
 - Open on Port 8080 http://localhost:8080
 
+- Folder Stucture of Docker Server
+  ```
+  |_pipeline
+  ```
+
 # AIRFLOW Referrent
+
+### Overview
+- เป็นแพรตฟอร์มที่ช่วยสร้าง กำหนด และควบคุม ลำดับการทำงานของกระบวนต่างๆ ภายในระบบ มี GUI ให้ใช้งานได้ง่าย และสะดวกในการควบคุม สามารถกำหนดช่วงเวลา และรอบในการทำงานได้
 
 ### ตั้งตั้ง airflow
 - ติดตั้งด้วย docker-compose
