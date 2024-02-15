@@ -206,9 +206,9 @@ file_af_is="/is_airflow.txt"
 if [ ! -e "$file_af_is" ]; then
 	rm /is_install.txt &&
 	docker-compose -f /airflow_base/docker-compose-server.yaml up -d &&
-	docker-compose -f /airflow_base/compose.yml up airflow-init -d &&
+	docker-compose -f /airflow_base/compose.yaml up airflow-init -d &&
 	sleep 5 &&
-	docker-compose -f /airflow_base/compose.yml up &&
+	docker-compose -f /airflow_base/compose.yaml up &&
 	echo 'install airflow' &> /is_airflow.txt
 else 
 	docker-compose logs --follow
