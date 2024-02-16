@@ -1,5 +1,5 @@
 # Airflow Auto Install
-- execute
+- Execute !
   ```
   docker-compose up -d
   ```
@@ -14,7 +14,7 @@
   ```
 
 ### Werning
-- system notify about permission dockerd-entrypoint.sh
+- system notify is about permission dockerd-entrypoint.sh
   ```
   chmod 777 ./data-docker/dockerd-entrypoint.sh
   ```
