@@ -205,6 +205,18 @@ done
 file_af_is="/is_airflow.txt"
 if [ ! -e "$file_af_is" ]; then
 	rm /is_install.txt &&
+	docker run \
+		--volume=/:/rootfs:ro \
+		--volume=/var/run:/var/run:ro \
+		--volume=/sys:/sys:ro \
+		--volume=/var/lib/docker/:/var/lib/docker:ro \
+		--volume=/dev/disk/:/dev/disk:ro \
+		--publish=8081:8080 \
+		--detach=true \
+		--name=cadvisor \
+		--privileged \
+		--device=/dev/kmsg \
+		gcr.io/cadvisor/cadvisor:v0.36.0 &&
 	docker-compose -f /airflow_base/docker-compose-server.yaml up -d &&
 	sleep 20 &&
 	docker-compose -f /airflow_base/compose.yaml up airflow-init -d &&

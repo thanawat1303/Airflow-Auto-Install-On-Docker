@@ -87,5 +87,4 @@ with DAG(
 
     StartJobs >> DataSets >> PrepareDataSets
 
-    PrepareDataSets >> AfterPrepare1
-    PrepareDataSets >> AfterPrepare2
+    PrepareDataSets >> [AfterPrepare1 , AfterPrepare2]
