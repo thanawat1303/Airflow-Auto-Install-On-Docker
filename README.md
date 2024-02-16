@@ -1,5 +1,5 @@
 # Airflow Auto Install
-- Execute !
+- Execute
   ```
   docker-compose up -d
   ```
