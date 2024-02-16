@@ -4,11 +4,9 @@
   docker-compose up -d
   ```
 - Open on 
-  - Airflow Web UI
-    http://localhost:8080
+  - Airflow Web UI http://localhost:8080
 
-  - Cadvisor
-    http://localhost:8081
+  - Cadvisor http://localhost:8081
 
 - Folder Stucture of Docker Server
   ```
