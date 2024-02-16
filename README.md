@@ -14,7 +14,7 @@
   ```
 
 ### Werning
-- system notify is about permission dockerd-entrypoint.sh
+- When system notifies an about permission dockerd-entrypoint.sh
   ```
   chmod 777 ./data-docker/dockerd-entrypoint.sh
   ```
