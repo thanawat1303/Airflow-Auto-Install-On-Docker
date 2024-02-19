@@ -2,7 +2,7 @@ services:
   container-server :
     build : ./docker-server/.
     volumes :
-      - ./dags/pipeline:/pipeline
+      - ./pipe:/pipe
     privileged : true
     restart : always
     networks:

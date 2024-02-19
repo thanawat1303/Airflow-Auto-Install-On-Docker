@@ -13,7 +13,7 @@ default_args = {
 
 with DAG(
     dag_id="deverlop_model",
-    schedule="*/5 * * * *",
+    schedule="*/30 * * * *",
     catchup=False,
     tags=["rtn-AI"],
     default_args=default_args
@@ -25,14 +25,14 @@ with DAG(
         task_id='StartJob',
         bash_command=f"""
             echo StartJob && 
-            if [ ! -e '/opt/airflow/dags/pipeline/data/{date}' ]; then
-                mkdir /opt/airflow/dags/pipeline/data/{date} 
+            if [ ! -e '/opt/airflow/pipe/data/{date}' ]; then
+                mkdir /opt/airflow/pipe/data/{date} 
             fi && 
-            if [ ! -e '/opt/airflow/dags/pipeline/data/{date}/data' ]; then
-                mkdir /opt/airflow/dags/pipeline/data/{date}/data
+            if [ ! -e '/opt/airflow/pipe/data/{date}/data' ]; then
+                mkdir /opt/airflow/pipe/data/{date}/data
             fi && 
-            if [ ! -e '/opt/airflow/dags/pipeline/data/{date}/model' ]; then
-                mkdir /opt/airflow/dags/pipeline/data/{date}/model
+            if [ ! -e '/opt/airflow/pipe/data/{date}/model' ]; then
+                mkdir /opt/airflow/pipe/data/{date}/model
             fi
         """
     )
@@ -50,9 +50,9 @@ with DAG(
         auto_remove=True,
         mount_tmp_dir=False,
         mounts=[
-            Mount(source=f"/pipeline/data/input_data_sets/" , target="/input_service/" , type="bind"),
-            Mount(source=f"/pipeline/data/{date}/data" , target="/output_service/" , type="bind"),
-            Mount(source=f"/pipeline/tasks/1-DataSets/" , target="/task/" , type="bind"),
+            Mount(source=f"/pipe/data/input_data_sets/" , target="/input_service/" , type="bind"),
+            Mount(source=f"/pipe/data/{date}/data" , target="/output_service/" , type="bind"),
+            Mount(source=f"/pipe/tasks/1-DataSets/" , target="/task/" , type="bind"),
         ], 
     )
 
@@ -69,9 +69,9 @@ with DAG(
         auto_remove=True,
         mount_tmp_dir=False,
         mounts=[
-            Mount(source=f"/pipeline/data/{date}/data" , target="/input_service/" , type="bind"),
-            Mount(source=f"/pipeline/data/{date}/data" , target="/output_service/" , type="bind"),
-            Mount(source=f"/pipeline/tasks/2-PrepareDataSet/" , target="/task/" , type="bind"),
+            Mount(source=f"/pipe/data/{date}/data" , target="/input_service/" , type="bind"),
+            Mount(source=f"/pipe/data/{date}/data" , target="/output_service/" , type="bind"),
+            Mount(source=f"/pipe/tasks/2-PrepareDataSet/" , target="/task/" , type="bind"),
         ], 
     )
 

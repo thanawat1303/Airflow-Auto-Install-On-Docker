@@ -1,6 +1,6 @@
 # Airflow Auto Install
 - Execute
-  ```
+  ```bash
   docker-compose up -d
   ```
 - Open on 
@@ -8,13 +8,15 @@
 
   - Cadvisor http://localhost:8081
 
-- Folder Stucture of Docker Server
-  ```
-  |_pipeline
+- Folder Stucture of Data Input - Output and Task
+  ```ruby
+  |_pipe_
+         |_data
+         |_tasks
   ```
 
 ### Werning
 - When system notifies an about permission dockerd-entrypoint.sh
-  ```
+  ```bash
   chmod 777 ./data-docker/dockerd-entrypoint.sh
   ```
