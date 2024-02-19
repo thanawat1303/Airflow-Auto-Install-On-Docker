@@ -1,5 +1,6 @@
 /airflow_base/logs
 /airflow_base/plugins
 /airflow_base/config
-/airflow_standalon
 /Ref.md
+# /airflow_base/pipe/data/*
+# /airflow_base/pipe/tasks/*
