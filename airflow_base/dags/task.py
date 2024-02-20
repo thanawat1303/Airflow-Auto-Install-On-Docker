@@ -25,14 +25,14 @@ with DAG(
         task_id='StartJob',
         bash_command=f"""
             echo StartJob && 
-            if [ ! -e '/opt/airflow/pipe/data/{date}' ]; then
-                mkdir /opt/airflow/pipe/data/{date} 
+            if [ ! -e '/airflow_base/pipe/data/{date}' ]; then
+                mkdir /airflow_base/pipe/data/{date} 
             fi && 
-            if [ ! -e '/opt/airflow/pipe/data/{date}/data' ]; then
-                mkdir /opt/airflow/pipe/data/{date}/data
+            if [ ! -e '/airflow_base/pipe/data/{date}/data' ]; then
+                mkdir /airflow_base/pipe/data/{date}/data
             fi && 
-            if [ ! -e '/opt/airflow/pipe/data/{date}/model' ]; then
-                mkdir /opt/airflow/pipe/data/{date}/model
+            if [ ! -e '/airflow_base/pipe/data/{date}/model' ]; then
+                mkdir /airflow_base/pipe/data/{date}/model
             fi
         """
     )
@@ -43,16 +43,16 @@ with DAG(
         container_name="data_sets",
         command=f"bash /task/script.sh {date}",
         api_version="auto",
-        # docker_url="unix:///var/run/docker.sock",
-        docker_url="tcp://container-server:2375",
+        docker_url="unix:///var/run/docker.sock",
+        # docker_url="tcp://container-server:2375",
         xcom_all=False,
         network_mode="bridge",
         auto_remove=True,
         mount_tmp_dir=False,
         mounts=[
-            Mount(source=f"/pipe/data/input_data_sets/" , target="/input_service/" , type="bind"),
-            Mount(source=f"/pipe/data/{date}/data" , target="/output_service/" , type="bind"),
-            Mount(source=f"/pipe/tasks/1-DataSets/" , target="/task/" , type="bind"),
+            Mount(source=f"/airflow_base/pipe/data/input_data_sets/" , target="/input_service/" , type="bind"),
+            Mount(source=f"/airflow_base/pipe/data/{date}/data" , target="/output_service/" , type="bind"),
+            Mount(source=f"/airflow_base/pipe/tasks/1-DataSets/" , target="/task/" , type="bind"),
         ], 
     )
 
@@ -62,16 +62,16 @@ with DAG(
         container_name="prepare_data_set",
         command="bash /task/script.sh ",
         api_version="auto",
-        # docker_url="unix:///var/run/docker.sock",
-        docker_url="tcp://container-server:2375",
+        docker_url="unix:///var/run/docker.sock",
+        # docker_url="tcp://container-server:2375",
         xcom_all=False,
         network_mode="bridge",
         auto_remove=True,
         mount_tmp_dir=False,
         mounts=[
-            Mount(source=f"/pipe/data/{date}/data" , target="/input_service/" , type="bind"),
-            Mount(source=f"/pipe/data/{date}/data" , target="/output_service/" , type="bind"),
-            Mount(source=f"/pipe/tasks/2-PrepareDataSet/" , target="/task/" , type="bind"),
+            Mount(source=f"/airflow_base/pipe/data/{date}/data" , target="/input_service/" , type="bind"),
+            Mount(source=f"/airflow_base/pipe/data/{date}/data" , target="/output_service/" , type="bind"),
+            Mount(source=f"/airflow_base/pipe/tasks/2-PrepareDataSet/" , target="/task/" , type="bind"),
         ], 
     )
 

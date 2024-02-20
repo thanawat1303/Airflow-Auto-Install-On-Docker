@@ -203,8 +203,8 @@ until [ $(grep -c "API listen on /var/run/docker.sock" /is_install.txt) -eq 1 ];
 done
 
 file_af_is="/is_airflow.txt"
+sleep 30
 if [ ! -e "$file_af_is" ]; then
-	rm /is_install.txt &&
 	docker run \
 		--volume=/:/rootfs:ro \
 		--volume=/var/run:/var/run:ro \
@@ -216,13 +216,17 @@ if [ ! -e "$file_af_is" ]; then
 		--name=cadvisor \
 		--privileged \
 		--device=/dev/kmsg \
+		--restart=always \
 		gcr.io/cadvisor/cadvisor:v0.36.0 &&
 	docker-compose -f /airflow_base/docker-compose-server.yaml up -d &&
 	sleep 20 &&
 	docker-compose -f /airflow_base/compose.yaml up airflow-init -d &&
 	sleep 10 &&
-	docker-compose -f /airflow_base/compose.yaml up &&
-	echo 'install airflow' &> /is_airflow.txt
+	docker-compose -f /airflow_base/compose.yaml up -d &&
+	chmod 777 /var/run/docker.sock &&
+	echo 'install airflow' &> /is_airflow.txt && rm /is_install.txt &&
+	docker-compose logs --follow
 else 
+	chmod 777 /var/run/docker.sock &&
 	docker-compose logs --follow
 fi

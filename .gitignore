@@ -2,5 +2,7 @@
 /airflow_base/plugins
 /airflow_base/config
 /Ref.md
-# /airflow_base/pipe/data/*
-# /airflow_base/pipe/tasks/*
+/airflow_base/pipe/data/*
+/airflow_base/pipe/tasks/*
+!/airflow_base/pipe/data/note.txt
+!/airflow_base/pipe/tasks/note.txt

@@ -10,7 +10,11 @@ services:
       - ./data-docker/dockerd-entrypoint.sh:/usr/local/bin/dockerd-entrypoint.sh
     privileged : true
     restart: always
+    networks :
+      - airflow-rtn-network
 
+networks:
+  airflow-rtn-network:
   # container_server :
   #   image: docker:dind
   #   privileged : true
