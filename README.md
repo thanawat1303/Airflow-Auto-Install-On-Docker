@@ -28,6 +28,14 @@
     |_airflow_base_
                    |_Data_
     ```
+
+  - Python Module
+    ```ruby
+    |_airflow_base_
+                   |_dags_
+                          |_Python_
+    ```
+  
 ### Example Tasks
 - PythonOperator
   ```python
@@ -73,7 +81,6 @@
         ], 
     )
     ```
-    
 
 ### Werning
 - When system notifies an about permission dockerd-entrypoint.sh
