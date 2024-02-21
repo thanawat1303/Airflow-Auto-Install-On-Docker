@@ -2,7 +2,8 @@ services:
   container-server :
     build : ./docker-server/.
     volumes :
-      - ./pipe:/airflow_base/pipe
+      - ./Data:/airflow_base/Data
+      - ./dags/Docker:/airflow_base/dags/Docker
     privileged : true
     restart : always
     networks:

@@ -197,13 +197,13 @@ fi
 
 exec "$@" &> /is_install.txt &
 
-file="/is_install.txt"
 until [ $(grep -c "API listen on /var/run/docker.sock" /is_install.txt) -eq 1 ]; do
 	cat /is_install.txt
 done
+rm /is_install.txt
 
 file_af_is="/is_airflow.txt"
-sleep 30
+sleep 15
 if [ ! -e "$file_af_is" ]; then
 	docker run \
 		--volume=/:/rootfs:ro \
@@ -224,9 +224,11 @@ if [ ! -e "$file_af_is" ]; then
 	sleep 10 &&
 	docker-compose -f /airflow_base/compose.yaml up -d &&
 	chmod 777 /var/run/docker.sock &&
-	echo 'install airflow' &> /is_airflow.txt && rm /is_install.txt &&
+	echo 3 > /proc/sys/vm/drop_caches &&
+	echo 'install airflow' &> /is_airflow.txt &&
 	docker-compose logs --follow
 else 
 	chmod 777 /var/run/docker.sock &&
+	echo 3 > /proc/sys/vm/drop_caches &&
 	docker-compose logs --follow
 fi

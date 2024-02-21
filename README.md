@@ -8,12 +8,10 @@
 
   - Cadvisor http://localhost:8081
 
-- Folder Stucture of Data Input - Output and Task
+- Folder Stucture of Data Input - Output
   ```ruby
   |_airflow_base_
-                 |_pipe_
-                        |_data
-                        |_tasks
+                 |_Data_
   ```
 
 ### Werning

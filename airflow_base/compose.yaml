@@ -75,7 +75,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
 
-    - ${AIRFLOW_PROJ_DIR:-.}/pipe:/airflow_base/pipe
+    - ${AIRFLOW_PROJ_DIR:-.}/Data:/airflow_base/Data
     - /var/run/docker.sock:/var/run/docker.sock:ro
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
