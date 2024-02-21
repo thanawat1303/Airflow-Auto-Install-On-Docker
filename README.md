@@ -9,31 +9,22 @@
   - Cadvisor http://localhost:8081
 
 - Folder Stucture
-  - PythonOparetor
+  - PythonOparetor module
     ```ruby
     |_airflow_base_
                   |_dags_
                          |_Python
     ```
-
-  - DockerOparetor
+  - DockerOparetor module
     ```ruby
     |_airflow_base_
                   |_dags_
                          |_Docker
     ```
-
   - Data : Input , Output
     ```ruby
     |_airflow_base_
                    |_Data_
-    ```
-
-  - Python Module
-    ```ruby
-    |_airflow_base_
-                   |_dags_
-                          |_Python_
     ```
   
 ### Example Tasks
