@@ -11,10 +11,11 @@ services:
     privileged : true
     # restart: always
     networks :
-      - airflow-rtn-network
+      - airflow-devft-network
 
 networks:
-  airflow-rtn-network:
+  airflow-devft-network:
+    name: airflow-devft-network
   # container_server :
   #   image: docker:dind
   #   privileged : true

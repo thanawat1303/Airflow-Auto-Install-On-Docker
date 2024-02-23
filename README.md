@@ -21,12 +21,15 @@
                   |_dags_
                          |_Docker
     ```
-  - Data : Input , Output
+  - Data : Input , Output , File Other
     ```ruby
     |_airflow_base_
                    |_Data_
     ```
-  
+
+- Network Container
+  - airflow-devft-network
+
 ### Example Tasks
 - PythonOperator
   ```python

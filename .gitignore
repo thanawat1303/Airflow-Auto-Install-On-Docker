@@ -4,8 +4,7 @@
 /Ref.md
 /airflow_base/dags/task_python.txt
 
-/airflow_base/dags/DAG-1/*
-!/airflow_base/dags/DAG-1/note.txt
+/airflow_base/dags/product
 
 /airflow_base/dags/Docker/*
 !/airflow_base/dags/Docker/note.txt

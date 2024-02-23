@@ -2,3 +2,21 @@ apache-airflow-providers-docker
 docker
 python-dotenv
 
+tensorflow==2.11
+pythainlp
+jsonpath_ng
+attacut
+emoji==1.7
+seaborn
+matplotlib
+pandas
+nltk
+wordcloud
+gdown
+gensim
+scikit-learn
+Cython
+fastapi
+uvicorn
+pytz
+tqdm
