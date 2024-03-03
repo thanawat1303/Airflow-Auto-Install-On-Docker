@@ -5,6 +5,10 @@ from airflow.operators import bash , python
 
 from AI_module import data_sets , prepare
 
+def set_tag(**kwargs) :
+    task_instance = kwargs['ti']
+    task_instance.xcom_push(key="tag_image", value=round(datetime.datetime.timestamp(datetime.datetime.now()) * 1000))
+
 default_args = {
     'owner'             : 'rtn',
     'start_date'        : datetime(2024 , 2 , 1),

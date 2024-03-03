@@ -7,7 +7,7 @@ services:
       - 8081:8081
     volumes:
       - ./airflow_base:/airflow_base
-      - ./data-docker/dockerd-entrypoint.sh:/usr/local/bin/dockerd-entrypoint.sh
+      - ./docker-execute/dockerd-entrypoint.sh:/usr/local/bin/dockerd-entrypoint.sh
     privileged : true
     # restart: always
     networks :

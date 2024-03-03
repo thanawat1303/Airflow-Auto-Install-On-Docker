@@ -79,7 +79,7 @@
 ### Werning
 - When system notifies an about permission dockerd-entrypoint.sh
   ```bash
-  chmod 777 ./data-docker/dockerd-entrypoint.sh
+  chmod 777 ./docker-execute/dockerd-entrypoint.sh
   ```
 
 ### Referrent
