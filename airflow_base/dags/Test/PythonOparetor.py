@@ -3,7 +3,8 @@ from datetime import datetime
 from airflow import DAG
 from airflow.operators import bash , python
 
-from AI_module import data_sets , prepare
+# original file /dags/Python/examples
+from examples import Task1 , Task2
 
 def set_tag(**kwargs) :
     task_instance = kwargs['ti']
@@ -38,7 +39,7 @@ with DAG(
 
     B = python.PythonOperator(
         task_id='B',
-        python_callable=data_sets.data_set,
+        python_callable=Task1.Task1,
         op_kwargs={
             'input' : "/airflow_base/Data/AI/input_data_sets/data.txt",
             'output' : f"/airflow_base/Data/AI/{date}/data/datasets_python.txt"
@@ -47,7 +48,7 @@ with DAG(
 
     C = python.PythonOperator(
         task_id='C',
-        python_callable=prepare.prepare_data,
+        python_callable=Task2.Task2,
         op_kwargs={
             'input' : f"/airflow_base/Data/AI/{date}/data/datasets_python.txt",
             'output' : f"/airflow_base/Data/AI/{date}/data/datasets_python.txt"

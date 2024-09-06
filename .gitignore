@@ -13,6 +13,7 @@
 !/airflow_base/dags/Docker/note.txt
 
 /airflow_base/dags/Python/*
+!/airflow_base/dags/Python/examples
 !/airflow_base/dags/Python/__init__.py
 !/airflow_base/dags/Python/note.txt
 
