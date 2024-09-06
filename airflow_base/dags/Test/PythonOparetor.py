@@ -3,7 +3,7 @@ from datetime import datetime
 from airflow import DAG
 from airflow.operators import bash , python
 
-# original file /dags/Python/examples
+# original file /airflow_base/dags/Python/examples
 from examples import Task1 , Task2
 
 def set_tag(**kwargs) :
